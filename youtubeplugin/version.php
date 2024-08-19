@@ -1,7 +1,7 @@
 <?php
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'mod_myplugin';
+$plugin->component = 'mod_youtubeplugin';
 $plugin->version = 2024081900; // Plugin version (YYYYMMDDXX).
 $plugin->requires = 2024042202.00; // Minimum Moodle version required.
 $plugin->maturity = MATURITY_STABLE;

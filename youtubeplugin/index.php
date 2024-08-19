@@ -4,7 +4,7 @@ require_once(__DIR__ . '/../../config.php');
 $courseid = required_param('id', PARAM_INT); // Get the course ID from URL parameters.
 $course = get_course($courseid);
 
-$PAGE->set_url('/mod/myplugin/index.php', array('id' => $courseid));
+$PAGE->set_url('/mod/youtubeplugin/index.php', array('id' => $courseid));
 $PAGE->set_pagelayout('standard');
 $PAGE->set_title('Add YouTube Video');
 $PAGE->set_heading($course->fullname);
@@ -48,6 +48,5 @@ if (!empty($name) && !empty($youtubeurl)) {
         echo "<p>Invalid YouTube URL provided.</p>";
     }
 }
-
 
 echo $OUTPUT->footer();
