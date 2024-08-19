@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLDB PATH="mod/myplugin/db" VERSION="2024081900" COMMENT="XMLDB file for myplugin plugin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+    <TABLES>
+        <TABLE NAME="myplugin" COMMENT="Table to store myplugin activity instances">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="Primary key for the table"/>
+                    <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="Foreign key to the course table"/>
+                <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="User-specified name of the activity instance"/>
+                <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="Timestamp of when the activity was last modified"/>
+                <FIELD NAME="intro" TYPE="text" NOTNULL="false" COMMENT="User-defined activity description"/>
+                <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" COMMENT="Format of the intro field content"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary key"/>
+                <KEY NAME="course" TYPE="foreign" FIELDS="course" REFTABLE="course" REFFIELDS="id" ONDELETE="cascade" COMMENT="Foreign key referencing the course table"/>
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>
